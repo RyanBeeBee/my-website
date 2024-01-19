@@ -1,5 +1,11 @@
-// Wait for the DOM content to be fully loaded before executing the script
 document.addEventListener('DOMContentLoaded', () => {
+
+    var menuToggle = document.getElementById('menu-toggle');
+    var menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
 
     // Carousel Functionality
     const carousel = document.querySelector('.carousel');
@@ -28,13 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start the smooth scrolling using setInterval
     setInterval(scrollCarousel, 16); // 60fps animation
-
-    // Mobile Menu Toggle Functionality
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    menuToggle.addEventListener('click', () => {
-        menu.classList.toggle('active');
-    });
 
     // Image Modal Functionality
     var modal = document.getElementById("imageModal");

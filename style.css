@@ -6,11 +6,9 @@
 }
 
 body {
-    /* Existing styles */
     font-family: 'Arial', sans-serif;
     color: #ffffff;
     line-height: 1.5;
-    /* Add background image */
     background-image: url('images/9.JPG');
     background-size: cover; /* Cover the entire viewport */
     background-position: center; /* Center the image */
@@ -34,7 +32,7 @@ body::before {
     bottom: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
-    z-index: -1; /* Ensure it's behind the content */
+    z-index: -1; 
 }
 
 /* Color Scheme Variables */
@@ -62,7 +60,7 @@ header {
     display: none;
     position: absolute;
     right: 0;
-    top: 60px; /* Adjust based on your navbar height */
+    top: 60px; 
     width: 0;
     height: 20%; /* 1/5th of the screen height */
     background-color: rgba(0, 0, 0, 0.83);
@@ -251,7 +249,6 @@ section {
 .carousel {
     display: flex;
     overflow-x: hidden; /* Hide the scrollbar */
-    /* ... other styles ... */
 }
 
 .carousel img {
@@ -260,7 +257,6 @@ section {
     object-fit: cover;
     width: auto;
     margin-right: 20px;
-    /* ... other styles ... */
 }
 
 /* Last image should not have a right margin to avoid extra space */
@@ -318,7 +314,7 @@ section {
 
 /* Footer */
 footer {
-    background: var(--secondary-color); /* Your existing styles */
+    background: var(--secondary-color); 
     color: var(--light-color);
     text-align: center;
     padding: 1rem 0;

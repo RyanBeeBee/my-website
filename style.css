@@ -1,0 +1,342 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Existing styles */
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    line-height: 1.5;
+    /* Add background image */
+    background-image: url('images/9.jpg');
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Fixed background */
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    z-index: -1; /* Ensure it's behind the content */
+}
+
+/* Color Scheme Variables */
+:root {
+    --primary-color: #1ea2db; /* head */
+    --secondary-color: #3186aa; /* a */
+    --light-color: #f8f9fa; /* White */
+}
+
+/* Header and Navigation */
+header {
+    background: var(--primary-color);
+    color: var(--light-color);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.brand-name {
+    font-family: 'Bungee Spice', cursive;
+    font-weight: 700;
+}
+
+.contact-box {
+    font-family: 'Bungee Spice', cursive;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px; /* Adjust based on your navbar height */
+    width: 0;
+    height: 20%; /* 1/5th of the screen height */
+    background-color: rgba(0, 0, 0, 0.83);
+    color: rgb(255, 255, 255);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    overflow: hidden;
+    transition: width 0.5s ease;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+#closeModal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#home-link {
+    display: flex;
+    align-items: center;
+}
+
+#companyLogo {
+    max-height: 50px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between logo and company name */
+    cursor: pointer; /* Indicates the logo is clickable */
+}
+
+#home-link a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+#menu {
+    list-style: none;
+    display: flex;
+    position: relative;
+}
+
+#menu li {
+    margin: 0 10px;
+    position: relative;
+}
+
+#menu a {
+    color: var(--light-color);
+    text-decoration: none;
+    transition: background-color 0.2s ease, padding 0.2s ease;
+    border-radius: 8px;
+}
+
+#menu a:hover {
+    background-color: var(--primary-color);
+    padding: 10px;
+}
+
+#menu a#servicesDropdown {
+    cursor: pointer;
+}
+
+/* Show the dropdown content on hover */
+#menu li:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    width: max-content; /* Set the width to the widest item */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 0;
+    border-radius: 8px;
+}
+
+/* Button styles inside the dropdown */
+.dropdown-btn {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: inline-block; /* Allow each button to size to its content */
+    background-color: #f9f9f9; /* Match the dropdown content background */
+    border: none; /* Remove borders */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    border-radius: 8px; /* Rounded corners for the buttons */
+}
+
+/* Hover effect for buttons */
+.dropdown-btn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* Mobile Menu Toggle */
+#menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Sections */
+section {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+/* Services and Projects Grid Layout */
+.service-column, .project-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px;
+}
+
+.service-item, .project-item {
+    padding: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    background: var(--secondary-color);
+    color: var(--light-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.service-item:hover, .project-item:hover {
+    background-color: var(--primary-color); /* Change background color on hover */
+    font-size: 1.05em; /* Increase font size */
+    color: var(--light-color); /* Optional: change text color for better visibility */
+    transition: background-color 0.2s ease, font-size 0.2s ease;
+    text-decoration: none; /* Remove underline from links */
+}
+
+.service-item, .project-item {
+    color: var(--light-color); /* Set default text color */
+    text-decoration: none; /* Remove underline from links */
+    display: block; /* Make the entire area clickable */
+    padding: 0.7rem 2rem; /* Adjust padding to match button style */
+}
+
+.carousel {
+    display: flex;
+    overflow-x: hidden; /* Hide the scrollbar */
+    /* ... other styles ... */
+}
+
+.carousel img {
+    flex-shrink: 0;
+    max-height: 300px; /* Adjust as needed */
+    object-fit: cover;
+    width: auto;
+    margin-right: 20px;
+    /* ... other styles ... */
+}
+
+/* Last image should not have a right margin to avoid extra space */
+.carousel img:last-child {
+    margin-right: 0;
+}
+
+/* Contact Form */
+#contact-form {
+    max-width: 500px;
+    margin: auto;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+}
+
+#contact-form button {
+    background: var(--secondary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 0.7rem 2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, font-size 0.2s ease;
+}
+
+#contact-form button:hover {
+    background-color: var(--primary-color);
+    font-size: 1.05em;
+}
+
+/* Styles for text input and textarea */
+#contact-form input[type="text"], 
+#contact-form input[type="email"], 
+#contact-form textarea {
+    background-color: rgba(0, 100, 100, 0.75); /* Set background to black */
+    color: rgb(255, 255, 255); /* Set text color to white for readability */
+    border: 1px solid #333; /* Optional: Add a border */
+    padding: 0.5rem; /* Add some padding */
+}
+
+/* You might also want to style the focus state */
+#contact-form input[type="text"]:focus, 
+#contact-form input[type="email"]:focus, 
+#contact-form textarea:focus {
+    outline: none; /* Removes the default focus outline */
+    border-color: #0d6efd; /* Optional: Change border color on focus */
+}
+
+
+/* Footer */
+footer {
+    background: var(--secondary-color); /* Your existing styles */
+    color: var(--light-color);
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #menu {
+        display: none;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

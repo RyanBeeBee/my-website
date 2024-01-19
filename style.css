@@ -1,4 +1,3 @@
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
@@ -60,7 +59,7 @@ header {
     display: none;
     position: absolute;
     right: 0;
-    top: 60px; 
+    top: 60px; /* Adjust based on your navbar height */
     width: 0;
     height: 20%; /* 1/5th of the screen height */
     background-color: rgba(0, 0, 0, 0.83);
@@ -253,7 +252,7 @@ section {
 
 .carousel img {
     flex-shrink: 0;
-    max-height: 300px; /* Adjust as needed */
+    max-height: 300px; 
     object-fit: cover;
     width: auto;
     margin-right: 20px;
@@ -300,10 +299,10 @@ section {
     background-color: rgba(0, 100, 100, 0.75); /* Set background to black */
     color: rgb(255, 255, 255); /* Set text color to white for readability */
     border: 1px solid #333; /* Optional: Add a border */
-    padding: 0.5rem; /* Add some padding */
+    padding: 0.5rem; /* Padding */
 }
 
-/* You might also want to style the focus state */
+
 #contact-form input[type="text"]:focus, 
 #contact-form input[type="email"]:focus, 
 #contact-form textarea:focus {
@@ -314,7 +313,7 @@ section {
 
 /* Footer */
 footer {
-    background: var(--secondary-color); 
+    background: var(--secondary-color);
     color: var(--light-color);
     text-align: center;
     padding: 1rem 0;
@@ -335,4 +334,20 @@ footer {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    #menu {
+        display: none;
+    }
+
+    #menu-toggle {
+        display: block; /* Show the menu toggle icon */
+        cursor: pointer;
+    }
+
+    /* This class is added or removed by the JavaScript */
+    #menu.active {
+        display: block; /* Show the menu when active */
+    }
 }

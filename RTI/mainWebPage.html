@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Bi Technology Inc</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link href="" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div id="home-link">
+                <!--<img src="images/logo.png" alt="RBT Logo" id="companyLogo">-->
+                <a href="#home" class="brand-name">RBT Inc</a>
+            </div>
+            <ul id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="#services">Services</a>
+                    <div class="dropdown-content">
+                        <a href="service1.html" class="service-item">[HTML+JavaScript]</a>
+                        <a href="service2.html" class="service-item">[MediaServer]</a>
+                        <a href="service3.html" class="service-item">[Database]</a>
+                        <a href="service4.html" class="service-item">[Python]</a>
+                        <a href="service5.html" class="service-item">[Java]</a>
+                        <a href="service6.html" class="service-item">[C]</a>
+                    </div>
+                </li>
+                <li><a href="#projects">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="project1.html" class="project-item">[CNN]</a>
+                        <a href="project2.html" class="project-item">[ShangHai Dock]</a>
+                        <a href="project3.html" class="project-item">[Halfaya Oilfield]</a>
+                        <a href="project4.html" class="project-item">[Cesium]</a>
+                        <a href="project5.html" class="project-item">[Rushing...]</a>
+                        <a href="project6.html" class="project-item">[On the Way...]</a>
+                    </div>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div id="menu-toggle">☰</div>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to Ryan Bi Technology Inc</h1>
+        <p>Your partner in innovative software development solutions.</p>
+    </section>
+
+    <div id="imageModal" class="modal">
+        <span id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Image Carousel Section -->
+    <section id="image-carousel">
+        <div class="carousel">
+            <img src="images/1.JPG" alt="Image 1">
+            <img src="images/2.jpg" alt="Image 2">
+            <img src="images/3.jpg" alt="Image 3">
+            <img src="images/4.jpg" alt="Image 4">
+            <img src="images/5.jpg" alt="Image 5">
+            <img src="images/6.jpeg" alt="Image 6">
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+
+    <!--<section id="services">
+        <h2>Our Services</h2>
+        <div class="service-column">
+            <a href="service1.html" class="service-item">[HTML+JavaScript]</a>
+            <a href="service2.html" class="service-item">[MediaServer]</a>
+            <a href="service3.html" class="service-item">[Database]</a>
+            <a href="service4.html" class="service-item">[Python]</a>
+            <a href="service5.html" class="service-item">[Java]</a>
+            <a href="service6.html" class="service-item">[C]</a>
+        </div>
+    </section>-->
+    
+    <!--<section id="projects">
+        <h2>Our Projects</h2>
+        <div class="project-column">
+            <a href="project1.html" class="project-item">[CNN]</a>
+            <a href="project2.html" class="project-item">[ShangHai Dock]</a>
+            <a href="project3.html" class="project-item">[Halfaya Oilfield]</a>
+            <a href="project4.html" class="project-item">[Cesium]</a>
+            <a href="project5.html" class="project-item">[Rushing...]</a>
+            <a href="project6.html" class="project-item">[On the Way...]</a>
+        </div>
+    </section>-->
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form" action="form-handler.php" method="post">
+            <input type="text" id="name" name="name" placeholder="Your Name">
+            <input type="email" id="email" name="email" placeholder="Your Email">
+            <textarea id="message" name="message" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <div id="contactBox" class="contact-box">
+        <p>Email: ransemails@gmail.com</p>
+        <p>Phone: +1(647)-679-3117</p>
+        <p>Address: 173 Broadlands Blvd, North York, ON, M3A 1K4</p>
+    </div>
+
+    <footer>
+        <p>© 2024 Ryan Bi Technology Inc. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
